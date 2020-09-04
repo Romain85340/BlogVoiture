@@ -1,0 +1,44 @@
+<%- include('./partials/header')-%>
+
+<form>
+    
+    <div class="form-group">
+      <label for="exampleInputPassword1">Modele</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" value="<%=car.modele%>">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Constructeur</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+        <% facturies.forEach(function(factory) {%>
+          <option value="<%= factory.id%>"><%= factory.name%></option>
+        <%});%>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Annee</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" value="<%=car.annee%>">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Prix</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" value="<%=car.prix%>">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Constructeur</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+        <% energies.forEach(function(energy) {%>
+          <option value="<%= energy.id%>"><%= energy.name%></option>
+        <%});%>
+        </select>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+
+<%- include('./partials/footer')-%>
