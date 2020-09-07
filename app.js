@@ -42,7 +42,7 @@ global.db = db;
 // Home
 const { homePage } = require("./controllers/home")
 // Cars
-const { getSingleCar, getEditPage } = require('./controllers/car')
+const { getSingleCar, getEditPage, postEditPage, getCreateCar, postCreateCar } = require('./controllers/car')
 
 
 
@@ -50,8 +50,11 @@ const { getSingleCar, getEditPage } = require('./controllers/car')
 // Home 
 app.get("/", homePage)
 // Cars
+app.get("/car/create", getCreateCar)
+app.post("/car/create", postCreateCar)
 app.get("/car/:id", getSingleCar)
 app.get("/car/edit/:id", getEditPage)
+app.post("/car/edit/:id", postEditPage)
 
 
 
